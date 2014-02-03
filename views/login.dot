@@ -1,0 +1,15 @@
+<div id="overlay"></div>
+<div id="loading">
+	<div class="login">
+		<form>
+			<h3>Sign in to Google Mail</h3>
+			<div class="username-wrapper">
+				<label for="username">Email</label><input tabindex="1" id="username" type="text" placeholder="example@gmail.com">
+			</div>
+			<div class="password-wrapper">
+				<label for="password">Password</label><input tabindex="2" id="password" type="password" placeholder="password">
+			</div>
+			<button type="submit" class="login-button">Sign in</button>
+		</form>
+	</div>
+</div>
