@@ -2,15 +2,13 @@ button:focus { outline: none; }
 
 a:focus { outline: none; }
 
-::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar { width: 5px; height: 5px;}
 
 ::-webkit-scrollbar-thumb { background: #f07746; }
 
 #messages-list::-webkit-scroller-thumb { border-left: 1px solid #e1e1df; }
 
 #messages-list::-webkit-scrollbar-track { border-left: 1px solid #e1e1df; }
-
-#message::-webkit-scrollbar { width: 4px; }
 
 body, html, .splitter { height: 100%; font-family: "Ubuntu", "Helvetica", "Arial", sans-serif; }
 
@@ -132,25 +130,24 @@ input, textarea { font-family: "Ubuntu", "Helvetica", "Arial", sans-serif; }
 #messages-list li.no-border { border-bottom: 1px solid transparent; }
 #messages-list li.no-border.selected { border-bottom: 1px solid #e1e1df; }
 
-#post { max-width: 600px; overflow: hidden; margin: 0 auto; padding: 0 25px; font-size: 14px; color: #555555; line-height: 22px; }
-#post .post-link { display: block; position: relative; margin-top: 0px; margin-bottom: 30px; border: 1px solid transparent; border-bottom: 1px solid rgba(0, 0, 0, 0.1); box-shadow: 0 1px 0 white; }
+#post { overflow: hidden; margin: 0; padding: 0; font-size: 14px; color: #555555; line-height: 22px; }
+#post .post-link { padding: 0 10px; display: block; position: relative; margin: 0px; border: 1px solid transparent; border-bottom: 1px solid rgba(0, 0, 0, 0.1); box-shadow: 0 1px 0 white; }
 #post .post-link .details { font-weight: 400; display: block; font-size: 12px; color: #666666; }
 #post .post-link h1.title { color: #4d1f41; font-size: 26px; font-weight: 300; font-family: "Ubuntu Light", "Ubuntu", "Helvetica", "Arial", sans-serif; padding-bottom: 10px; margin: 0; line-height: 1; text-shadow: 0 0 1px rgba(0, 0, 0, 0.01); max-width: 600px; }
+
 #post strong { font-weight: bold; }
 #post em { font-style: italic; }
-#post table { max-width: 600px; width: 100%; }
+#post table { width: 100%; }
 #post img { max-width: 100% !important; box-sizing: border-box; height: auto !important; }
 #post img:not(.no-border), #post iframe { /* images resize with window */ padding: 4px; margin: 15px auto; display: table; background-color: white; border: none; border-radius: 2px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
 #post h2 { text-shadow: 0 0 1px rgba(0, 0, 0, 0.01); font-family: "Ubuntu Light", "Ubuntu", "Helvetica", "Arial", sans-serif; color: #4d1f41; }
 #post h3 { font-size: 18px; color: #4d1f41; font-family: "Ubuntu Medium", "Ubuntu", "Helvetica", "Arial", sans-serif; text-shadow: 0 0 1px rgba(0, 0, 0, 0.01); font-weight: 600; }
 #post h3 a { font-weight: 600; font-family: "Ubuntu Medium", "Ubuntu", "Helvetica", "Arial", sans-serif; }
 #post a { font-family: "Ubuntu Light", "Ubuntu", "Helvetica", "Arial", sans-serif; font-weight: 500; color: #08a8c5; text-decoration: none; }
-#post a:not(.post-link):hover { text-decoration: underline; }
-#post a.youtube { display: block; position: relative; }
-#post a.youtube:after { content: ""; position: absolute; display: block; top: 50%; bottom: auto; left: 50%; right: auto; width: 77px; height: 77px; margin: -37px 0 0 -37px; z-index: 5; background: url(../img/youtube.png); }
-#post p, #post div, #post img { max-width: 600px; }
 #post a.hasImage { border-bottom: 0; }
 #post hr { height: 2px; border: 0; background: url(../img/hr.png); }
+
+#post > .body { overflow: auto; }
 
 #modal * { -webkit-user-select: none; }
 #modal > div { position: fixed; border-radius: 5px; background-color: white; box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); z-index: 300; }

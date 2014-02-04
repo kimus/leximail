@@ -64,6 +64,8 @@ var Shell = {
 
 					// Splitter
 					$('#app').trigger('resize');
+
+					self.redraw();
 				}
 			});
 
@@ -103,27 +105,73 @@ var Shell = {
 		return d;
 	},
 
-	show: function(messages)
+	list: function(messages)
 	{
 		var self = this;
 
 		var msglist = $('#messages-list');
 		$.each(messages, function(i, m)
 		{
-			var txt = (m.text || m.html).substr(0, 200);
-			console.log(txt);
+			var txt = (m.text || m.html).substr(0, 50);
 
-			msglist.append(app.templates.message({
+			msglist.append(app.templates.row({
 				id: i,
+				account: 'Google Mail',
+				icon: '',
 				date: moment(m.date).calendar(),
 				subject: m.subject,
-				snipet: htmlToText.fromString(txt)
+				snipet: htmlToText.fromString(txt),
+				read: false,
+				starred: false
 			}));
+		});
+
+		msglist.find('li').off('click').on('click', function()
+		{
+			msglist.find('.selected').removeClass('selected');
+			$(this).addClass('selected');
+
+			var id = $(this).data('id');
+			var m = messages[id];
+
+			self.open(m);
+
 		});
 
 		// show all
 		$('#overlay').hide();
 		self.sync.end();
+	},
+
+	open: function(message)
+	{
+		var win = $('#post-window');
+		win.empty();
+
+		win.append(app.templates.message({
+			id: message.id,
+			subject: message.subject,
+			date: moment(message.date).calendar(),
+			html: message.html
+		}));
+
+		this.redraw();
+	},
+
+	redraw: function()
+	{
+		// Email body size
+		var full = $('#message').height();
+		var h = $('#post > header').height();
+		var bb = $('#message > .bar').height();
+		var v = full - (h + bb + 2);
+
+		console.log('header:', full);
+		console.log('header:', h);
+		console.log('bar:', bb);
+		console.log('view:', v);
+
+		$('#post > div').height(v);
 	},
 
 	settings: function()

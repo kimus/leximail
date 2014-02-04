@@ -60,7 +60,7 @@ shell.init().then(function()
 					p.disconnect();
 				});
 
-				shell.show(messages);
+				shell.list(messages);
 			});
 		});
 	}

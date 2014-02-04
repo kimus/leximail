@@ -1,9 +1,16 @@
-<li class="article" data-id="{{=it.id}}">
-	<header>
-		<img class="icon" width="16" height="16" src="themes/default/img/gmail.png">
-		<span class="feed">Google Account</span>
-		<span class="time">{{=it.date}}</span>
+<article id="post">
+	<header class="post-link">
+		<div class="details">
+			<!-- img class="icon" width="16" height="16" src="img/gmail.png" -->
+			<span class="feed">Google Account</span> | 
+			<span class="time">{{=it.date}}</span>
+		</div>
+		<div class="emails">
+			From: <a class="account">Bob Sinclair &lt;bob@example.com&gt;</a>
+		</div>
+		<h1 class="title">{{=it.subject}}</h1>
 	</header>
-	<span class="title">{{=it.subject}}</span>
-	<span class="snippet">{{=it.snipet}}</span>
-</li>
+	<div class="body">
+		{{=it.html}}
+	</div>
+</article>

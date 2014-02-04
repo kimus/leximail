@@ -99,7 +99,7 @@ ImapProvider.prototype = {
 						return;
 					}
 
-					var f = self.imap.seq.fetch('1:3', { bodies: '' });
+					var f = self.imap.seq.fetch('1:30', { bodies: '' });
 					self.messages = [];
 					
 					var len = 0;
