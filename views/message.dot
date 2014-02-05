@@ -10,7 +10,5 @@
 		</div>
 		<h1 class="title">{{=it.subject}}</h1>
 	</header>
-	<div class="body">
-		{{=it.html}}
-	</div>
+	<iframe class="body"></iframe>
 </article>

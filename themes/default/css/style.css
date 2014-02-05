@@ -135,19 +135,19 @@ input, textarea { font-family: "Ubuntu", "Helvetica", "Arial", sans-serif; }
 #post .post-link .details { font-weight: 400; display: block; font-size: 12px; color: #666666; }
 #post .post-link h1.title { color: #4d1f41; font-size: 26px; font-weight: 300; font-family: "Ubuntu Light", "Ubuntu", "Helvetica", "Arial", sans-serif; padding-bottom: 10px; margin: 0; line-height: 1; text-shadow: 0 0 1px rgba(0, 0, 0, 0.01); max-width: 600px; }
 
-#post strong { font-weight: bold; }
+/*#post strong { font-weight: bold; }
 #post em { font-style: italic; }
 #post table { width: 100%; }
 #post img { max-width: 100% !important; box-sizing: border-box; height: auto !important; }
-#post img:not(.no-border), #post iframe { /* images resize with window */ padding: 4px; margin: 15px auto; display: table; background-color: white; border: none; border-radius: 2px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
+#post img:not(.no-border), #post iframe { padding: 4px; margin: 15px auto; display: table; background-color: white; border: none; border-radius: 2px; box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3); }
 #post h2 { text-shadow: 0 0 1px rgba(0, 0, 0, 0.01); font-family: "Ubuntu Light", "Ubuntu", "Helvetica", "Arial", sans-serif; color: #4d1f41; }
 #post h3 { font-size: 18px; color: #4d1f41; font-family: "Ubuntu Medium", "Ubuntu", "Helvetica", "Arial", sans-serif; text-shadow: 0 0 1px rgba(0, 0, 0, 0.01); font-weight: 600; }
 #post h3 a { font-weight: 600; font-family: "Ubuntu Medium", "Ubuntu", "Helvetica", "Arial", sans-serif; }
 #post a { font-family: "Ubuntu Light", "Ubuntu", "Helvetica", "Arial", sans-serif; font-weight: 500; color: #08a8c5; text-decoration: none; }
 #post a.hasImage { border-bottom: 0; }
-#post hr { height: 2px; border: 0; background: url(../img/hr.png); }
+#post hr { height: 2px; border: 0; background: url(../img/hr.png); }*/
 
-#post > .body { overflow: auto; }
+#post > .body { overflow: auto; display: block; width: 100%; border: none; }
 
 #modal * { -webkit-user-select: none; }
 #modal > div { position: fixed; border-radius: 5px; background-color: white; box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); z-index: 300; }

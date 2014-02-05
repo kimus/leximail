@@ -151,9 +151,12 @@ var Shell = {
 		win.append(app.templates.message({
 			id: message.id,
 			subject: message.subject,
-			date: moment(message.date).calendar(),
-			html: message.html
+			date: moment(message.date).calendar()
 		}));
+
+		var html = !message.html ? '<pre style="white-space: pre-line">' + message.text + '</pre>' : message.html;
+
+		win.find('iframe').contents().find('html').html(html);
 
 		this.redraw();
 	},
@@ -171,7 +174,7 @@ var Shell = {
 		console.log('bar:', bb);
 		console.log('view:', v);
 
-		$('#post > div').height(v);
+		$('#post > .body').height(v);
 	},
 
 	settings: function()
