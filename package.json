@@ -27,7 +27,8 @@
 	},
 	
 	"scripts": {
-		"test": "node test/index.js"
+		"test": "node test/index.js",
+		"start": "node node_modules/.bin/nodewebkit"
 	},
 	
 	"repository": {

@@ -6,6 +6,7 @@ var Preferences = {
 
 	load: function()
 	{
+		console.log('loading:', Preferences.path);
 		nconf.file({ file: Preferences.path });
 	},
 
