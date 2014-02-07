@@ -1,7 +1,8 @@
 global.$ = $;
 
 var app = {
-	templates: require('dot').process({ path: "./views"})
+	templates: require('dot').process({ path: "./views"}),
+	gui: require('nw.gui')
 };
 global.app = app;
 var shell = require('./js/app/widget/appshell');

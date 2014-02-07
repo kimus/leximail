@@ -1,6 +1,6 @@
 var moment = require('moment');
 var htmlToText = require('html-to-text');
-
+var config = require('../core/preferences');
 
 var Shell = {
 
@@ -74,15 +74,23 @@ var Shell = {
 			//
 			// Login (temporary just for testing)
 			// 
-			body.append(app.templates.login({}));
+
+			body.append(app.templates.login({
+				username: config.get('username'), 
+				password: config.get('password')
+			}));
 
 			$('#loading form').on('submit', function()
 			{
 				$('#loading').hide();
 				$('#overlay').show();
 
-				self.username = $('#loading #username').val();
-				self.password = $('#loading #password').val();
+				var username = $('#loading #username').val();
+				var password = $('#loading #password').val();
+
+				config.set('username', username);
+				config.set('password', password);
+				config.save();
 
 				self.sync.start();
 
@@ -186,8 +194,8 @@ var Shell = {
 				provider: 'imap',
 				label: 'Gmail Account',
 				options: {
-					user: self.username,
-					password: self.password,
+					user: config.get('username'),
+					password: config.get('password'),
 					host: 'imap.gmail.com',
 					port: 993,
 					tls: true,

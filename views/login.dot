@@ -4,10 +4,10 @@
 		<form>
 			<h3>Sign in to Google Mail</h3>
 			<div class="username-wrapper">
-				<label for="username">Email</label><input tabindex="1" id="username" type="text" placeholder="example@gmail.com">
+				<label for="username">Email</label><input tabindex="1" id="username" type="text" placeholder="example@gmail.com" value="{{=it.username || ''}}">
 			</div>
 			<div class="password-wrapper">
-				<label for="password">Password</label><input tabindex="2" id="password" type="password" placeholder="password">
+				<label for="password">Password</label><input tabindex="2" id="password" type="password" placeholder="password" value="{{=it.password || ''}}">
 			</div>
 			<button type="submit" class="login-button">Sign in</button>
 		</form>
