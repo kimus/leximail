@@ -4,15 +4,15 @@
 		<div id="sidebar">
 			<ul id="filters">
 				<li class="all filter selected">
-					<img class="icon" width="16" height="16" src="themes/default/img/icon_all.png">
+					<i class="icon fa fa-bars"></i>
 					<span class="title">All</span>
 				</li>
 				<li class="unread filter">
-					<img class="icon" width="16" height="16" src="themes/default/img/icon_unread.png">
+					<i class="icon fa fa-circle"></i>
 					<span class="title">Unread</span>
 				</li>
 				<li class="starred filter">
-					<img class="icon" width="16" height="16" src="themes/default/img/icon_starred.png">
+					<i class="icon fa fa-star"></i>
 					<span class="title">Starred</span>
 				</li>
 			</ul>
@@ -24,7 +24,7 @@
 
 			<div class="bar">
 				<button id="refresh-button" title="Refresh"></button>
-				<button id="add-button" title="Add Account"></button>
+				<button id="add-button" title="Add Account"><i class="icon fa fa-plus-circle"></i></button>
 			</div>
 		</div>
 
@@ -35,15 +35,12 @@
 				</ul>
 
 				<div class="bar">
-					<button id="mark-all-as-read-trigger" title="Mark All As Read"></button>
-					<div id="mark-all-as-read-popup">
-						<div id="mark-all-as-read-button">Mark All As Read</div>
-					</div>
+					<button id="mark-all-as-read-button" title="Mark All As Read"><i class="icon fa fa-check-circle"></i></button>
 					
 					<div id="item-count"></div>
 
 					<input id="search-input" placeholder="Search Messages">
-					<button id="search-button" title="Search"></button>
+					<button id="search-button" title="Search"><i class="icon fa fa-search"></i></button>
 				</div>
 			</div>
 
@@ -52,12 +49,12 @@
 				</div>
 
 				<div class="bar" class="disabled">
-					<!-- button id="close-post-button" title="Close Post"></button -->
-					<button id="star-button" title="Toggle Star Status"></button>
-					<button id="read-button" title="Toggle Read Status"></button>
-					<button id="forward-button" title="Forward"></button>
+					<button id="star-button" title="Toggle Star Status"><i class="icon fa fa-star-o"></i></button>
+					<button id="read-button" title="Toggle Read Status"><i class="icon fa fa-circle-o"></i></button>
+					<button id="reply-button" title="Reply"><i class="icon fa fa-mail-reply"></i></button>
+					<button id="forward-button" title="Forward"><i class="icon fa fa-mail-forward"></i></button>
 
-					<div id="link-url"></div><button id="settings-button" title="Settings"></button>
+					<button id="settings-button" title="Settings"><i class="icon fa fa-cog"></i></button>
 				</div>
 			</div>
 
