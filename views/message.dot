@@ -6,7 +6,9 @@
 			<span class="time">{{=it.date}}</span>
 		</div>
 		<div class="emails">
-			From: <a class="account">Bob Sinclair &lt;bob@example.com&gt;</a>
+			{{~it.from :v:i}}
+			From: <a href="#" class="account">{{=v.name}} &lt;{{=v.address}}&gt;</a>
+			{{~}}
 		</div>
 		<h1 class="title">{{=it.subject}}</h1>
 	</header>

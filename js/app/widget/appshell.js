@@ -129,8 +129,9 @@ var Shell = {
 				date: moment(m.date).calendar(),
 				subject: m.subject,
 				snipet: htmlToText.fromString(txt),
-				read: false,
-				starred: false
+				read: m.read,
+				starred: m.starred,
+				important: m.important,
 			}));
 		});
 
@@ -159,6 +160,7 @@ var Shell = {
 		win.append(app.templates.message({
 			id: message.id,
 			subject: message.subject,
+			from: message.from,
 			date: moment(message.date).calendar()
 		}));
 
@@ -176,11 +178,6 @@ var Shell = {
 		var h = $('#post > header').height();
 		var bb = $('#message > .bar').height();
 		var v = full - (h + bb + 2);
-
-		console.log('header:', full);
-		console.log('header:', h);
-		console.log('bar:', bb);
-		console.log('view:', v);
 
 		$('#post > .body').height(v);
 	},

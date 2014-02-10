@@ -1,9 +1,9 @@
-<li class="article" data-id="{{=it.id}}">
+<li class="article{{? it.read }} read{{?}}{{? it.starred }} starred{{?}}{{? it.important }} important{{?}}" data-id="{{=it.id}}">
 	<header>
 		<img class="icon" width="16" height="16" src="themes/default/img/gmail.png">
 		<span class="feed">Google Account</span>
 		<span class="time">{{=it.date}}</span>
 	</header>
-	<span class="title">{{=it.subject}}</span>
-	<span class="snippet">{{=it.snipet}}</span>
+	<span class="title">{{? it.starred }}<i class="icon fa fa-star"></i>{{?}}{{=it.subject}}</span>
+	<span class="snippet">{{? it.important }}<i class="icon fa fa-exclamation"></i>{{?}}{{=it.snipet}}</span>
 </li>

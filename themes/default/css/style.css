@@ -20,11 +20,11 @@ input, textarea { font-family: "Ubuntu", "Helvetica", "Arial", sans-serif; }
 #right-side > .vsplitbar { width: 1px; cursor: col-resize; background: white; border-left: 1px solid #e1e1df; border-right: 3px solid #faf9f7; position: relative; }
 #right-side > .vsplitbar:after { content: ""; position: absolute; display: block; top: auto; bottom: 0; left: 0; right: auto; width: 4px; height: 35px; background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.08) 0%, rgba(255, 255, 255, 0.08) 100%); border-top: 1px solid rgba(0, 0, 0, 0.2); }
 
-#sidebar { height: 100%; width: 200px; min-width: 20px; background: url(../img/feeds_bg.png); }
+#sidebar { height: 100%; width: 200px; min-width: 20px; background-color: #eaeaea; }
 #sidebar * { -webkit-user-select: none; }
 #sidebar ul { margin: 0; padding: 0; }
-#sidebar #filters { position: absolute; display: block; top: 0; bottom: auto; left: 0; right: 0; height: 99px; border-bottom: 1px dashed rgba(0, 0, 0, 0.1); }
-#sidebar #labels { position: absolute; display: block; top: 100px; bottom: 36px; left: 0; right: 0; overflow-y: auto; overflow-x: hidden; border-top: 1px dashed rgba(255, 255, 255, 0.6); padding-top: 8px; }
+#sidebar #filters { display: block; border-bottom: 1px dashed rgba(0, 0, 0, 0.1); }
+#sidebar #labels { display: block; border-top: 1px dashed rgba(255, 255, 255, 0.6); padding-top: 8px; }
 #sidebar .empty-message { display: none; font-size: 13px; font-family: "Ubuntu Light", "Ubuntu", "Helvetica", "Arial", sans-serif; text-shadow: 0 0 1px rgba(0, 0, 0, 0.01), 0 1px 0 white; margin-top: 140px; padding: 0 20px; line-height: 20px; color: #555555; }
 
 #messages { min-width: 250px; height: 100%; width: 300px; background-color: white; }
@@ -99,18 +99,22 @@ input, textarea { font-family: "Ubuntu", "Helvetica", "Arial", sans-serif; }
 #labels li.label.expanded header .icon .bit:active, #filters li.label.expanded header .icon .bit:active { -webkit-transform: rotate(45deg); }
 #labels li.label.expanded ul, #filters li.label.expanded ul { display: block; }
 #labels li.label ul li, #filters li.label ul li { padding-left: 10px; }
-#labels li.feed, #labels li.filter, #labels li.label header, #filters li.feed, #filters li.filter, #filters li.label header { height: 30px; line-height: 30px; display: -webkit-box; border-top: 1px solid transparent; border-bottom: 1px solid transparent; -webkit-transition: background 0.15s; }
+#labels li.feed, #labels li.filter, #labels li.label header, #filters li.feed, #filters li.filter, #filters li.label header { display: -webkit-box; border-top: 1px solid transparent; border-bottom: 1px solid transparent; -webkit-transition: background 0.15s; }
 #labels li.feed.selected, #labels li.filter.selected, #labels li.label header.selected, #filters li.feed.selected, #filters li.filter.selected, #filters li.label header.selected { color: #222222; border-top: 1px solid #cccccc; border-bottom: 1px solid #cccccc; background: whitesmoke; box-shadow: 0 1px 0 white inset; }
 #labels li.feed.hover, #labels li.filter.hover, #labels li.label header.hover, #filters li.feed.hover, #filters li.filter.hover, #filters li.label header.hover { background: rgba(0, 0, 0, 0.05); border-top: 1px solid #cccccc; border-bottom: 1px solid #cccccc; }
-#labels li .icon, #filters li .icon { -webkit-box-flex: 0; display: block; height: 16px; width: 16px; padding: 4px 1px 1px 4px; border: 1px solid #c9c9c9; border-radius: 3px; margin: 3px 5px 3px 11px; background: white; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); }
+#labels li .icon, #filters li .icon { -webkit-box-flex: 0; display: block; height: 24px; width: 24px; line-height: 25px; text-align: center; border: 1px solid #c9c9c9; border-radius: 3px; margin: 3px 5px 3px 11px; background: white; box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1); }
 #labels li .title, #filters li .title { display: block; -webkit-box-flex: 1; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; color: #4c4c4c; font-weight: 500; line-height: 29px; }
 #labels li .count, #filters li .count { display: block; -webkit-box-flex: 0; margin: 6px 5px 6px 5px; background: #f1f1f1; box-shadow: 0 1px 0 white inset; border: 1px solid #d0cfce; border-radius: 3px; color: #737373; font-weight: bold; font-size: 12px; height: 16px; line-height: 16px; padding: 0 3px; }
 
 #messages-list li { padding: 0 5px; border-top: 1px solid white; border-bottom: 1px solid #e1e1df; font-size: 12px; overflow: hidden; cursor: default; -webkit-transition: height 150; position: relative; }
 #messages-list li:last-child { margin-bottom: 10px; }
+
 #messages-list li.read .title { color: #777777; }
-#messages-list li.starred .title { color: #3b3b3b; position: relative; }
-#messages-list li.starred .title:after { position: absolute; display: block; top: 5px; bottom: auto; left: 3px; right: auto; content: ""; display: inline-block; width: 13px; height: 14px; background: url(../img/icon_starred_alt.png) no-repeat; opacity: 0.3; }
+#messages-list li.starred .title { color: #3b3b3b; padding-left: 5px; }
+#messages-list li.starred .title .icon { width: 16px; }
+#messages-list li.important .snippet { color: #3b3b3b; padding-left: 5px; }
+#messages-list li.important .snippet .icon { width: 16px; }
+
 #messages-list li.selected { border-top: 1px solid #cccbc7; border-bottom: 1px solid white; background: #ecebe7; box-shadow: inset 0 0 4px rgba(0, 0, 0, 0.1), 0 -1px 0 white, inset 0 -1px 0 #cccbc7; }
 #messages-list li.selected:first-child { border-top: 0; }
 #messages-list li.selected + li { border-top: 1px solid transparent; }

@@ -99,7 +99,7 @@ ImapProvider.prototype = {
 						return;
 					}
 
-					var f = self.imap.seq.fetch('1:30', { bodies: '' });
+					var f = self.imap.seq.fetch('1:*', { bodies: '' });
 					self.messages = [];
 					
 					var len = 0;
@@ -110,12 +110,53 @@ ImapProvider.prototype = {
 						len++;
 
 						var prefix = '(#' + seqno + ') ';
+						var attrs = {};
 						msg.on('body', function(stream, info)
 						{
-							var mailparser = new MailParser();
+							var mailparser = new MailParser({
+								streamAttachments: true
+							});
 							mailparser.on("end", function(m)
 							{
+								$.each(attrs.flags, function(i, a)
+								{
+									/*
+								    Flags:
+								    \Seen		Message has been read
+								    \Answered 	Message has been answered
+								    \Flagged 	Message is "flagged" for urgent/special attention
+								    \Deleted 	Message is marked for removal
+								    \Draft 		Message has not completed composition (marked as a draft).
+								    */
+
+									if (a == '\\Seen')
+									{
+										m.read = true;
+									}
+								});
+
+								$.each(attrs['x-gm-labels'], function(i, a)
+								{
+									/*
+									Labels:
+									\Important	Messages has been marked important
+									\Starred	Messages has been marked important
+									 */
+									
+									if (a == '\\Important')
+									{
+										m.important = true;
+									}
+									if (a == '\\Starred')
+									{
+										m.starred = true;
+									}
+								});
+
+								m.attrs = attrs;
+
 								console.log(prefix + 'Parsed');
+								//console.log(m);
 								self.messages.push(m);
 
 								if (self.messages.length == len)
@@ -126,9 +167,9 @@ ImapProvider.prototype = {
 							stream.pipe(mailparser);
 						});
 
-						msg.once('attributes', function(attrs)
+						msg.once('attributes', function(a)
 						{
-							//console.log(prefix + 'Attributes: %s', inspect(attrs, false, 8));
+							attrs = a;
 						});
 					});
 					

@@ -15,6 +15,10 @@
 					<i class="icon fa fa-star"></i>
 					<span class="title">Starred</span>
 				</li>
+				<li class="important filter">
+					<i class="icon fa fa-exclamation"></i>
+					<span class="title">Important</span>
+				</li>
 			</ul>
 
 			<ul id="labels">
