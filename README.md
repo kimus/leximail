@@ -46,6 +46,8 @@ Bug reports that include steps-to-reproduce (including code) are the
 best. Even better, make them in the form of pull requests that update
 the test suite. Thanks!
 
+<a href="https://plus.google.com/107939365292129411888" rel="publisher">Google+</a>
+
 
 License
 -------
