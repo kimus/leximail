@@ -6,7 +6,7 @@
 	"main": "index.html",
 
 	"window": {
-		"toolbar": false,
+		"toolbar": true,
 		"icon": "icons/leximail.png"
 	},
 
@@ -15,10 +15,10 @@
 		"dot": "~1.0.2",
 		"imap": "~0.8.8",
 		"mailparser": "~0.4.1",
-		"iconv": "~2.0.7",
 		"moment": "~2.5.1",
 		"html-to-text": "~0.0.7",
-		"nconf": "~0.6.9"
+		"nconf": "~0.6.9",
+		"node-mbox": "~0.0.2"
 	},
 
 	"devDependencies": {
